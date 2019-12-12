@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тест страничка</title>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Roboto Sans by Google -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="title"> Наша мастерская очень скоро откроется! </h1>
+                    <div class="img-transform">
+                        <img src="/static/images/under_construction.png" width="400px" height="250px" alt="Не дефракулирует">
+                    </div>
+
+                    <h4 class="title">Оставляйте свой e-mail в форме ниже</h4>
+
+                    <div>
+                        <form action="" method="post" class="form-inline  text-center"> {% csrf_token %}
+                            <div class="form-group">
+                                <label>Ваш Email: </label>
+                                <input type="email" name="{{ form.email.name }}" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ваше Имя: </label>
+                                <input type="text" name="{{ form.name.name }}" class="form-control">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-white">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
